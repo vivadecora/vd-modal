@@ -1,6 +1,19 @@
 (function() {
 	'use strict';
 
+	angular.module("vd-modal").run(function(){
+		if(!Array.prototype.getObjectByValue){
+		    Array.prototype.getObjectByValue = function(propertyName, propertyValue){
+		        for(var i=0; i < this.length;i++){
+		            var item = this[i];
+		            if(item[propertyName] === propertyValue){
+		                return item;
+		            }
+		        }
+		    };
+		};		
+	})
+
 	angular.module('vd-modal').factory('ModalModel', ModalModel);
 
 	ModalModel.$inject = ['ModalManager'];

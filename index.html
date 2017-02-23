@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="aplicativoExemplo">
+<head>
+	<meta charset="UTF-8">
+	<title>VD-Modal</title>
+	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+
+	<script type="text/javascript" src="/src/js/modal.module.js"></script>
+	<script type="text/javascript" src="/src/js/controllers/modal-column-directive.controller.js"></script>
+	<script type="text/javascript" src="/src/js/controllers/modal-directive.controller.js"></script>
+	<script type="text/javascript" src="/src/js/directives/modal-column.directive.js"></script>
+	<script type="text/javascript" src="/src/js/directives/modal.directive.js"></script>
+	<script type="text/javascript" src="/src/js/models/modal-manager.model.js"></script>
+	<script type="text/javascript" src="/src/js/models/modal.model.js"></script>
+	
+	<script type="text/javascript">
+		angular.module("aplicativoExemplo", ["vd-modal"]);			
+		angular.module("aplicativoExemplo").controller("indexController", IndexController);
+		
+		function IndexController(ModalModel){
+			var vc = this;
+			vc.modalOlaMundo = new ModalModel.getConstructor("ola mundo");
+			vc.toggleModalOlaMundo = function(){
+				vc.modalOlaMundo.isOpen = !vc.modalOlaMundo.isOpen;
+			}
+		}
+	</script>
+
+</head>
+<body ng-controller="indexController as vc">
+	
+	<div modal model="vc.modalOlaMundo">Olá mundo</div>
+	<button ng-click="vc.toggleModalOlaMundo()">Exibe/Esconde modal</button>
+
+</body>
+</html>
