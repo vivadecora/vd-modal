@@ -1,0 +1,13 @@
+=modifier($name)
+    @at-root
+        $selector: nth(&, 1)
+        $direct-parent: nth($selector, length($selector))
+        #{$direct-parent}--#{$name}
+            @extend #{$direct-parent} !optional
+        #{&}--#{$name}
+            @content
+
+=element($name)
+    @at-root
+        #{&}__#{$name}
+            @content

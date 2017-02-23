@@ -1,7 +1,7 @@
-.new-modal
-	+display-flex()
-	+justify-content(center)
-	+align-items(center)
+.vd-modal
+	display: flex
+	justify-content: center
+	align-items: center
 	position: fixed
 	top: 0
 	left: 0
@@ -21,8 +21,8 @@
 			background: rgba(0, 0, 0, 0)
 
 	+element('container')
-		+display-flex()
-		+justify-content(center)
+		display: flex
+		justify-content: center
 		position: relative
 		max-width: calc(100% - 20px)
 
@@ -31,34 +31,43 @@
 			max-width: 100%
 
 	+element('content')
-		@extend %box-base
+		background: #fff
+		border: 1px solid #d8d8d8
+		text-decoration: none
+		border-radius: 4px
+		box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, .12)
+		padding: 15px
 
 		+modifier('is-fullscreen')
-			@extend %box-base-reset
+			background: none
+			border: 0
+			border-radius: 0
+			box-shadow: none
+			padding: 0
 			width: 2000px
 			max-width: 100%
 			height: calc(100vh - 40px)
-			max-height: magic-number(1200px)
-			margin: 0 spacing(1)
+			max-height: 1200px
+			margin: 0 10px
 
 	+element('close')
 		color: #aaa
 		cursor: pointer
 		border: 1px solid #aaa
 		border-radius: 3px
-		+font-size(14)
+		font-size: 14
 		width: 35px
 		height: 35px
 		background: #fff
 		position: absolute
-		top: magic-number(-8px)
-		right: magic-number(-8px)
+		top: -8px
+		right: -8px
 		transition: all 0.5s ease
 		text-align: center
-		z-index: get-z-index('fullscreen-buttons')
+		z-index: 120
 
 		+modifier('is-fullscreen')
-			right: magic-number(4px)
+			right: 4px
 
 		&:hover
 			color: #666

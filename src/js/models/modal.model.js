@@ -33,10 +33,10 @@
 				overlayTransparent: false,
 				isFullscreen: false,
 				isShowingSidebar: true,
-				toggleInformationBox: toggleInformationBox
+				toggleSidebar: toggleSidebar
 			};
 
-			function toggleInformationBox(){
+			function toggleSidebar(){
 				model.isShowingSidebar = !model.isShowingSidebar;
 			}
 

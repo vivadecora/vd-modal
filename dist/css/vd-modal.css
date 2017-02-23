@@ -1,0 +1,93 @@
+.vd-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 160; }
+  .vd-modal__overlay, .vd-modal__overlay--transparent {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+    .vd-modal__overlay--transparent {
+      background: transparent; }
+  .vd-modal__container, .vd-modal__container--is-fullscreen {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    max-width: calc(100% - 20px); }
+    .vd-modal__container--is-fullscreen {
+      width: 2000px;
+      max-width: 100%; }
+  .vd-modal__content, .vd-modal__content--is-fullscreen {
+    background: #fff;
+    border: 1px solid #d8d8d8;
+    text-decoration: none;
+    border-radius: 4px;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.12);
+    padding: 15px; }
+    .vd-modal__content--is-fullscreen {
+      background: none;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      padding: 0;
+      width: 2000px;
+      max-width: 100%;
+      height: calc(100vh - 40px);
+      max-height: 1200px;
+      margin: 0 10px; }
+  .vd-modal__close, .vd-modal__close--is-fullscreen {
+    color: #aaa;
+    cursor: pointer;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    font-size: 14;
+    width: 35px;
+    height: 35px;
+    background: #fff;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    transition: all 0.5s ease;
+    text-align: center;
+    z-index: 120; }
+    .vd-modal__close--is-fullscreen {
+      right: 4px; }
+    .vd-modal__close:hover, .vd-modal__close--is-fullscreen:hover {
+      color: #666;
+      border-color: #666; }
+
+.modal-box {
+  display: flex;
+  height: calc(100vh - 40px);
+  align-items: stretch;
+  overflow: hidden; }
+  .modal-box__column--content {
+    height: 100%;
+    position: relative;
+    flex-grow: 1;
+    max-width: 100%; }
+  .modal-box__column--sidebar {
+    opacity: 1;
+    min-width: 285px;
+    margin-right: 0;
+    transition: margin-right 0.75s, opacity 0.75s; }
+  .modal-box__column--sidebar-collapsed {
+    opacity: 0;
+    margin-right: -295px;
+    transition: margin-right 0.75s, opacity 0.75s; }
+  .modal-box__column__transcluded {
+    height: 100%; }
+  .modal-box__column__footer {
+    position: absolute;
+    right: 20px;
+    bottom: 20px; }
+
+/*# sourceMappingURL=vd-modal.css.map */

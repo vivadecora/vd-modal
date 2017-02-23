@@ -1,7 +1,8 @@
-<div class="new-modal" ng-if='vc.vm.modalInstances.getObjectByValue("instanceName", vc.model.instanceName) && vc.model.isOpen'>
-	<div class="new-modal__overlay" ng-click="vc.model.closeModal()" ng-class="{ 'new-modal__overlay--transparent' : vc.model.overlayTransparent }"></div>
-	<div ng-class="{ 'new-modal__container' : !vc.model.isFullscreen, 'new-modal__container--is-fullscreen': vc.model.isFullscreen }">
-		<button ng-class="{ 'new-modal__close' : !vc.model.isFullscreen, 'new-modal__close--is-fullscreen': vc.model.isFullscreen }" ng-click="vc.model.closeModal()"><i class="viva-icon-x"></i></button>
-		<div ng-class="{ 'new-modal__content' : !vc.model.isFullscreen, 'new-modal__content--is-fullscreen': vc.model.isFullscreen }" ng-transclude></div>
+<div class="vd-modal" ng-if='vc.vm.modalInstances.getObjectByValue("instanceName", vc.model.instanceName) && vc.model.isOpen'>
+	<div class="vd-modal__overlay" ng-click="vc.model.closeModal()" ng-class="{ 'vd-modal__overlay--transparent' : vc.model.overlayTransparent }"></div>
+	<div ng-class="{ 'vd-modal__container' : !vc.model.isFullscreen, 'vd-modal__container--is-fullscreen': vc.model.isFullscreen }">
+		<button ng-class="{ 'vd-modal__close' : !vc.model.isFullscreen, 'vd-modal__close--is-fullscreen': vc.model.isFullscreen }" ng-click="vc.model.closeModal()">
+	&times;</button>
+		<div ng-class="{ 'vd-modal__content' : !vc.model.isFullscreen, 'vd-modal__content--is-fullscreen': vc.model.isFullscreen }" ng-transclude></div>
 	</div>
 </div>

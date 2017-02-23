@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>VD-Modal</title>
 	
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
 
 	<script type="text/javascript" src="/src/js/modal.module.js"></script>
 	<script type="text/javascript" src="/src/js/controllers/modal-column-directive.controller.js"></script>
@@ -13,6 +13,7 @@
 	<script type="text/javascript" src="/src/js/directives/modal.directive.js"></script>
 	<script type="text/javascript" src="/src/js/models/modal-manager.model.js"></script>
 	<script type="text/javascript" src="/src/js/models/modal.model.js"></script>
+	<link rel="stylesheet" href="dist/css/vd-modal.css">
 	
 	<script type="text/javascript">
 		angular.module("aplicativoExemplo", ["vd-modal"]);			
@@ -20,10 +21,17 @@
 		
 		function IndexController(ModalModel){
 			var vc = this;
-			vc.modalOlaMundo = new ModalModel.getConstructor("ola mundo");
+			vc.modalOlaMundo = new ModalModel.getConstructor("ola-mundo");
 			vc.toggleModalOlaMundo = function(){
 				vc.modalOlaMundo.isOpen = !vc.modalOlaMundo.isOpen;
 			}
+
+			vc.modalComColunas = new ModalModel.getConstructor("modal-com-colunas");
+			vc.modalComColunas.isFullscreen = true;
+			vc.toggleModalComColunas = function(){
+				vc.modalComColunas.isOpen = !vc.modalComColunas.isOpen;
+			}
+
 		}
 	</script>
 
@@ -31,7 +39,20 @@
 <body ng-controller="indexController as vc">
 	
 	<div modal model="vc.modalOlaMundo">Olá mundo</div>
-	<button ng-click="vc.toggleModalOlaMundo()">Exibe/Esconde modal</button>
+
+	<div modal model="vc.modalComColunas">		
+		<div class="modal-box">
+			<modal-column layout="content" modal-instance="modal-com-colunas"> 
+				<div style="border-radius:4px; padding:10px; box-sizing:border-box; background-color: #fff; border: 1px solid #d8d8d6;height: 100%;position: relative;margin-right: 10px;">Conteúdo do lado esquerdo</div>
+			</modal-column>
+			<modal-column layout="sidebar" modal-instance="modal-com-colunas"> 
+				<div style="border-radius:4px; padding:10px; box-sizing:border-box; background-color: #fff; border: 1px solid #d8d8d6;height: 100%">Conteúdo do lado direito</div>
+			</modal-column>			
+		</div>
+	</div>
+
+	<button ng-click="vc.toggleModalOlaMundo()">Exibe/Esconde modal "Olá mundo"</button>
+	<button ng-click="vc.toggleModalComColunas()">Exibe/Esconde modal com colunas</button>
 
 </body>
 </html>

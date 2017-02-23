@@ -1,8 +1,8 @@
 .modal-box
 
-    +display-flex()
+    display: flex
     height: calc(100vh - 40px)
-    +align-items(stretch)
+    align-items: stretch
     overflow: hidden
 
     +element("column")
@@ -10,7 +10,8 @@
         +modifier("content")
             height: 100%
             position: relative
-            +flex-grow(1)
+            flex-grow: 1
+            max-width: 100%
 
         +modifier("sidebar")
             opacity: 1
@@ -28,5 +29,5 @@
 
         +element("footer")
             position: absolute
-            right: spacing(2)
-            bottom: spacing(1)
+            right: 20px
+            bottom: 20px
