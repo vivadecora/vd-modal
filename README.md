@@ -1,2 +1,3 @@
-# vd-modal
-Nosso modal em angular JS.
+# VD Modal
+
+> Mais um modal em angularJS.

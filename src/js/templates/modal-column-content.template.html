@@ -1,0 +1,8 @@
+<div class="modal-box__column--content">
+	<div ng-transclude class="modal-box__column__transcluded"></div>
+	<footer class="modal-box__column__footer">
+		<button ng-click="vc.vm.toggleInformationBox()" class="btn btn-white btn-white-danger">
+			<i ng-class="{'viva-icon-collapse': vc.vm.isShowingSidebar, 'viva-icon-expand': !vc.vm.isShowingSidebar}"></i>
+		</button>
+	</footer>
+</div>

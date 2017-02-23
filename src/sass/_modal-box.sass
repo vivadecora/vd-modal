@@ -1,0 +1,32 @@
+.modal-box
+
+    +display-flex()
+    height: calc(100vh - 40px)
+    +align-items(stretch)
+    overflow: hidden
+
+    +element("column")
+
+        +modifier("content")
+            height: 100%
+            position: relative
+            +flex-grow(1)
+
+        +modifier("sidebar")
+            opacity: 1
+            min-width: 285px
+            margin-right: 0
+            transition: margin-right .75s, opacity .75s
+
+        +modifier("sidebar-collapsed")
+            opacity: 0
+            margin-right: -295px
+            transition: margin-right .75s, opacity .75s
+
+        +element("transcluded")
+            height: 100%
+
+        +element("footer")
+            position: absolute
+            right: spacing(2)
+            bottom: spacing(1)
