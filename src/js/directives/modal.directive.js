@@ -6,7 +6,7 @@
     function ModalDirective(){
         var directive = {
             transclude: true,
-            templateUrl: cdn('static/components/modal/templates/modal.template.html'),
+            templateUrl: '/src/js/templates/modal.template.html',
             restrict: 'EA',
             scope: true,
             replace: true,
