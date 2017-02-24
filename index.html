@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ghPages">
+<head>
+	<meta charset="UTF-8">
+	<title>VD modal - Easy to use angularJS modal. One modal at a time.</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js" type="application/javascript"></script>
+	<script src="https://unpkg.com/vd-modal@0.0.1/dist/js/vd-modal.min.js" type="application/javascript"></script>
+	<link rel="stylesheet" href="https://unpkg.com/vd-modal@0.0.1/dist/css/vd-modal.css">
+	<script type="application/javascript">
+		"use strict";
+
+		(function(){
+			angular.module("ghPages", ["vd-modal"]);
+			angular.module("ghPages").controller("indexController", indexController);
+
+			function indexController(ModalModel){
+				var vc = this;
+				vc.simpleModal = new ModalModel.getConstructor("simple-modal");
+				vc.openSimpleModal = function(){
+					vc.simpleModal.isOpen = true;
+				}
+			}
+		})();
+	</script>
+
+</head>
+<body ng-controller="indexController as vc">	
+	
+	<section>
+		<h1>VD modal</h1>
+		<h2>Easy to use angularJS modal.</h2>
+		<button>fork this project</button>
+	</section>
+
+	<section>
+		<modal model="vc.simpleModal">
+			<p>Hello world, this is my very first VD modal.</p>
+			<p>Click anywhere outside to close it.</p>
+		</modal>
+
+		<ul>
+			<li ng-click="vc.openSimpleModal()">
+				<img src="" alt="">
+				<p>Simple HTML modals</p>
+			</li>
+			<li ng-click="vc.openFlexboxModal()">
+				<img src="" alt="">
+				<p>Centered modals using flexbox</p>
+			</li>
+			<li ng-click="vc.openSidebarModal()">
+				<img src="" alt="">
+				<p>Sidebar modals</p>
+			</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>Install and configure in 4 steps.</h2>
+		<div>
+			<h3>Install it from npm.</h3>
+			<textarea><code>npm install --save vd-modal</code></textarea>
+		</div>
+		<div>
+			<h3> Insert javascript and css from vd-modal.</h3>
+			<textarea>
+				<code>
+					<script src="/path/to/vd-modal/dist/js/vd-modal.min.js" type="application/javascript"></script>
+					<link rel="stylesheet" href="/path/to/vd-modal/dist/css/vd-modal.css">
+				</code>
+			</textarea>
+		</div>
+		<div>
+			<h3> Inject <code>vd-modal</code> module to your application.</h3>
+			<textarea>
+				<code>
+					"use strict"
+
+					(function(){
+						angular.module("my-application", ["vd-modal"]);
+					})();
+
+				</code>			
+			</textarea>
+		</div>
+		<div>
+			<h3> Create your modal.</h3>
+			<p>my-application.js</p>
+			<textarea>
+				<code>
+					"use strict"
+
+					(function(){
+						angular.module("my-application").controller("mainController", function(ModalModel){
+							var vc = this;
+							vc.helloWorlModal = new ModalModel.getConstructor("hello-world");
+							vc.openHelloWorlModal = function(){
+								vc.helloWorlModal.isOpen = true;
+							}
+						});
+					})();
+				</code>			
+			</textarea>
+			<p>my-application.html (inside body excerpt)</p>
+			<textarea>			
+				<code>
+					<body ng-app="my-application">
+						<modal model="vc.helloWorlModal">
+							<h1>Hello world!</h1>
+							<p> This is my first modal using VD modal </p>
+						</modal>
+						<main ng-controller="mainController">
+							<button ng-click="vc.openHelloWorlModal()"></button>
+						</main>
+					</body>
+				</code>
+			</textarea>
+		</div>										
+	</section>
+</body>
+</html>
