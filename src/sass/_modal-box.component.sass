@@ -6,12 +6,20 @@
     overflow: hidden
 
     +element("column")
+        border-radius: 4px
+        padding: 10px
+        box-sizing: border-box
+        background-color: #fff
+        border: 1px solid #d8d8d6
+        height: 100%
+        position: relative
 
         +modifier("content")
             height: 100%
             position: relative
             flex-grow: 1
             max-width: 100%
+            margin-right: 10px
 
         +modifier("sidebar")
             opacity: 1

@@ -27,6 +27,8 @@
     "gulp-angular-templatecache": "^2.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-load-tasks": "^0.8.4",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.4.1",
     "gulp-uglifyjs": "^0.6.2"
   }
 }
