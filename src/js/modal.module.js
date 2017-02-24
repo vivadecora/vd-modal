@@ -1,5 +1,5 @@
 (function(){
 	'use strict';
 
-	angular.module('vd-modal', []);
+	angular.module("vd-modal", ["vd-modal.template-cache"]);
 })();
