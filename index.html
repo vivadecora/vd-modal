@@ -7,6 +7,70 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js" type="application/javascript"></script>
 	<script src="https://unpkg.com/vd-modal@0.0.1/dist/js/vd-modal.min.js" type="application/javascript"></script>
 	<link rel="stylesheet" href="https://unpkg.com/vd-modal@0.0.1/dist/css/vd-modal.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
+	<style type="text/css">
+	@charset "UTF-8";
+	@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+	@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+	/* fontawesome */
+	[class*="fontawesome-"]:before {
+	  font-family: "FontAwesome", sans-serif;
+	  font-style: normal; }
+
+	.hero__title {
+	  font-family: Montserrat, "sans-serif";
+	  font-size: 45px;
+	  text-align: center;
+	  line-height: 1;
+	  margin-bottom: 10px;
+	  color: #1a6090; }
+	  .hero__subtitle {
+	    font-size: calc(10px + 0.35em);
+	    margin-bottom: 5px;
+	    position: relative; }
+	  .hero__title {
+	    margin-top: 0;
+	    margin-bottom: 20px;
+	    text-shadow: 1px 1px #8cc4ea; }
+
+	.hero {
+	  background-color: #3598dB;
+	  color: #fff; 
+	  	height: 200px;
+		min-height: 70vh;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}		
+
+	.section {
+	    max-width: 960px;
+	    margin: 0 auto;
+	    display: flex;		
+	    padding: 20px 0;
+	    flex-direction: row;
+	    	@media (min-width: 768px){
+	    		flex-direction: column;
+	    	}
+	}
+	
+	.steps-list {
+	    display: flex;
+	    justify-content: space-between;
+	    margin: 0;
+	    width: 100%;
+	    padding: 0;
+	    text-align: center;
+	    list-style: none;
+	}
+
+	.steps-list__item {
+	    cursor: pointer;				
+	}
+
+	</style>
+
 	<script type="application/javascript">
 		"use strict";
 
@@ -27,35 +91,40 @@
 </head>
 <body ng-controller="indexController as vc">	
 	
-	<section>
-		<h1>VD modal</h1>
-		<h2>Easy to use angularJS modal.</h2>
-		<button>fork this project</button>
-	</section>
+	<header class="hero">
+		<div class="container">
+			<h1 class="hero__subtitle">VD modal</h1>
+			<h2 class="hero__title">Easy to use angularJS modal.</h2>		
+			<div>
+				<a class="github-button" href="https://github.com/vivadecora/vd-modal" data-style="mega" data-count-href="/vivadecora/vd-modal/stargazers" data-count-api="/repos/vivadecora/vd-modal#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star vivadecora/vd-modal on GitHub">Star</a>			
+				<a class="github-button" href="https://github.com/vivadecora/vd-modal/fork" data-style="mega" data-count-href="/vivadecora/vd-modal/network" data-count-api="/repos/vivadecora/vd-modal#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork vivadecora/vd-modal on GitHub">Fork</a>
+			</div>
+		</div>
+	</header>
 
-	<section>
+	<section class="section">
 		<modal model="vc.simpleModal">
 			<p>Hello world, this is my very first VD modal.</p>
 			<p>Click anywhere outside to close it.</p>
 		</modal>
 
-		<ul>
-			<li ng-click="vc.openSimpleModal()">
-				<img src="" alt="">
+		<ul class="steps-list">
+			<li ng-click="vc.openSimpleModal()" class="steps-list__item">
+				<img src="https://image.freepik.com/free-icon/modal-list_318-121594.jpg" alt="">
 				<p>Simple HTML modals</p>
 			</li>
-			<li ng-click="vc.openFlexboxModal()">
-				<img src="" alt="">
+			<li ng-click="vc.openFlexboxModal()" class="steps-list__item">
+				<img src="https://image.freepik.com/free-icon/modal-list_318-121594.jpg" alt="">
 				<p>Centered modals using flexbox</p>
 			</li>
-			<li ng-click="vc.openSidebarModal()">
-				<img src="" alt="">
+			<li ng-click="vc.openSidebarModal()" class="steps-list__item">
+				<img src="https://image.freepik.com/free-icon/modal-list_318-121594.jpg" alt="">
 				<p>Sidebar modals</p>
 			</li>
 		</ul>
 	</section>
 
-	<section>
+	<section class="section">
 		<h2>Install and configure in 4 steps.</h2>
 		<div>
 			<h3>Install it from npm.</h3>
@@ -117,5 +186,6 @@
 			</textarea>
 		</div>										
 	</section>
+	<script async defer src="https://buttons.github.io/buttons.js"></script>	
 </body>
 </html>
