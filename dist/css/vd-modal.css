@@ -1,0 +1,48 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+.section {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  padding: 20px 0;
+  flex-direction: row; }
+  @media (min-width: 768px) {
+    .section {
+      flex-direction: column; } }
+
+.body {
+  font-family: Montserrat, "sans-serif"; }
+
+.hero {
+  background-color: #3598dB;
+  color: #fff;
+  height: 200px;
+  min-height: 70vh;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .hero__subtitle {
+    font-size: calc(10px + 0.35em);
+    margin-bottom: 5px;
+    position: relative; }
+  .hero__title {
+    font-family: Montserrat, "sans-serif";
+    font-size: 45px;
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 10px;
+    color: #1a6090;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px #8cc4ea; }
+
+.steps-list, .steps-list--item {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  width: 100%;
+  padding: 0;
+  text-align: center;
+  list-style: none; }
+  .steps-list--item {
+    cursor: pointer; }

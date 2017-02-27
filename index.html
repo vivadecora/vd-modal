@@ -5,89 +5,15 @@
 	<title>VD modal - Easy to use angularJS modal. One modal at a time.</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js" type="application/javascript"></script>
+	<script src="src/javascript/gh-pages.module.js"></script>
+	<script src="src/javascript/controllers/index.controller.js"></script>
 	<script src="https://unpkg.com/vd-modal@0.0.1/dist/js/vd-modal.min.js" type="application/javascript"></script>
 	<link rel="stylesheet" href="https://unpkg.com/vd-modal@0.0.1/dist/css/vd-modal.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
-	<style type="text/css">
-	@charset "UTF-8";
-	@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
-	@import url(http://weloveiconfonts.com/api/?family=fontawesome);
-	/* fontawesome */
-	[class*="fontawesome-"]:before {
-	  font-family: "FontAwesome", sans-serif;
-	  font-style: normal; }
-
-	.hero__title {
-	  font-family: Montserrat, "sans-serif";
-	  font-size: 45px;
-	  text-align: center;
-	  line-height: 1;
-	  margin-bottom: 10px;
-	  color: #1a6090; }
-	  .hero__subtitle {
-	    font-size: calc(10px + 0.35em);
-	    margin-bottom: 5px;
-	    position: relative; }
-	  .hero__title {
-	    margin-top: 0;
-	    margin-bottom: 20px;
-	    text-shadow: 1px 1px #8cc4ea; }
-
-	.hero {
-	  background-color: #3598dB;
-	  color: #fff; 
-	  	height: 200px;
-		min-height: 70vh;
-		text-align: center;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}		
-
-	.section {
-	    max-width: 960px;
-	    margin: 0 auto;
-	    display: flex;		
-	    padding: 20px 0;
-	    flex-direction: row;
-	    	@media (min-width: 768px){
-	    		flex-direction: column;
-	    	}
-	}
-	
-	.steps-list {
-	    display: flex;
-	    justify-content: space-between;
-	    margin: 0;
-	    width: 100%;
-	    padding: 0;
-	    text-align: center;
-	    list-style: none;
-	}
-
-	.steps-list__item {
-	    cursor: pointer;				
-	}
-
-	</style>
-
-	<script type="application/javascript">
-		"use strict";
-
-		(function(){
-			angular.module("ghPages", ["vd-modal"]);
-			angular.module("ghPages").controller("indexController", indexController);
-
-			function indexController(ModalModel){
-				var vc = this;
-				vc.simpleModal = new ModalModel.getConstructor("simple-modal");
-				vc.openSimpleModal = function(){
-					vc.simpleModal.isOpen = true;
-				}
-			}
-		})();
-	</script>
-
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">	
+	<link rel="stylesheet" href="dist/css/vd-modal.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/github.min.css">
+	<script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body ng-controller="indexController as vc">	
 	
@@ -127,63 +53,63 @@
 	<section class="section">
 		<h2>Install and configure in 4 steps.</h2>
 		<div>
-			<h3>Install it from npm.</h3>
-			<textarea><code>npm install --save vd-modal</code></textarea>
+			<h3>1. Install it from npm.</h3>
+			<pre><code class="shell">$ npm install --save vd-modal</code></pre>
 		</div>
 		<div>
-			<h3> Insert javascript and css from vd-modal.</h3>
-			<textarea>
-				<code>
-					<script src="/path/to/vd-modal/dist/js/vd-modal.min.js" type="application/javascript"></script>
-					<link rel="stylesheet" href="/path/to/vd-modal/dist/css/vd-modal.css">
+			<h3>2. Insert javascript and css from vd-modal.</h3>
+			<pre>
+				<code class="html">
+&lt;script src="/path/to/vd-modal/dist/js/vd-modal.min.js" type="application/javascript"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" href="/path/to/vd-modal/dist/css/vd-modal.css"&gt;
 				</code>
-			</textarea>
+			</pre>
 		</div>
 		<div>
-			<h3> Inject <code>vd-modal</code> module to your application.</h3>
-			<textarea>
-				<code>
-					"use strict"
+			<h3>3. Inject <code>vd-modal</code> module to your application.</h3>
+			<pre>
+				<code class="javascript">
+"use strict"
 
-					(function(){
-						angular.module("my-application", ["vd-modal"]);
-					})();
-
+(function(){
+	angular.module("my-application", ["vd-modal"]);
+})();
 				</code>			
-			</textarea>
+			</pre>
 		</div>
 		<div>
-			<h3> Create your modal.</h3>
-			<p>my-application.js</p>
-			<textarea>
-				<code>
-					"use strict"
+			<h3>4. Create your modal.</h3>
+			<p> &gt; my-application.js</p>
+			<pre>
+				<code class="javascript">
+"use strict"
 
-					(function(){
-						angular.module("my-application").controller("mainController", function(ModalModel){
-							var vc = this;
-							vc.helloWorlModal = new ModalModel.getConstructor("hello-world");
-							vc.openHelloWorlModal = function(){
-								vc.helloWorlModal.isOpen = true;
-							}
-						});
-					})();
+(function(){
+	angular.module("my-application").controller("mainController", function(ModalModel){
+		var vc = this;
+		vc.helloWorlModal = new ModalModel.getConstructor("hello-world");
+		vc.openHelloWorlModal = function(){
+			vc.helloWorlModal.isOpen = true;
+		}
+	});
+})();
 				</code>			
-			</textarea>
-			<p>my-application.html (inside body excerpt)</p>
-			<textarea>			
-				<code>
-					<body ng-app="my-application">
-						<modal model="vc.helloWorlModal">
-							<h1>Hello world!</h1>
-							<p> This is my first modal using VD modal </p>
-						</modal>
-						<main ng-controller="mainController">
-							<button ng-click="vc.openHelloWorlModal()"></button>
-						</main>
-					</body>
+			</pre>
+			<p>&gt; my-application.html (inside body excerpt)</p>
+			<pre>			
+				<code class="html">
+&lt;body ng-app="my-application"&gt;
+	&lt;modal model="vc.helloWorlModal"&gt;
+		&lt;h1&gt;Hello world!&lt;/h1&gt;
+		&lt;p&gt; This is my first modal using VD modal &lt;/p&gt;
+	&lt;/modal&gt;
+	&lt;main ng-controller="mainController"&gt;
+		&lt;button ng-click="vc.openHelloWorlModal()"&gt;&lt;/button&gt;
+	&lt;/main&gt;
+&lt;/body&gt;
 				</code>
-			</textarea>
+			</pre>
+			Voilá! <a href ng-click="">You will have a modal just like this.</a>
 		</div>										
 	</section>
 	<script async defer src="https://buttons.github.io/buttons.js"></script>	
