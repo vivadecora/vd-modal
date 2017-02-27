@@ -39,6 +39,32 @@
 			<p> This is my first modal using VD modal </p>
 		</modal>		
 
+		<modal model="vc.flexboxModal">
+			<p> Content always centered using flexbox.</p>
+			<img src="http://4.bp.blogspot.com/-YngM72vvAf0/USNnVNgi-_I/AAAAAAAAAwI/14Z2CG8tUSE/s1600/pd+penguins-HD-Wallpapers.jpg" style="height:50vh">
+		</modal>
+
+		<modal model="vc.sidebarModal">
+			<div class="vd-modal__grid">
+				<modal-column layout="content" modal-instance="sidebar-modal">
+					<div style="display: flex; width: 100%; height: 100%; justify-content: center; align-self: center;">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Collier's_1921_Penguin_-_Antarctic_beach.jpg" style="max-width: 100%;max-height: 100%;">
+					</div>
+				</modal-column>
+				<modal-column layout="sidebar" modal-instance="sidebar-modal">
+					<div style="display:flex">
+						<img src="http://www.clker.com/cliparts/r/H/B/N/9/4/cyborg-penguin.svg" 
+						style="border-radius:50%;height: 40px;align-self: center;max-height: 100%;">
+						<div style="padding-left: 20px;flex-grow:1;">
+							<p style="font-weight: bolder;margin: 10px 0 5px 0;">Mister Penguin</p>
+							<p style="margin: 5px 0;">3 weeks ago</p>
+						</div>
+					</div>
+					<p>Great day with my fellows!</p>
+				</modal-column>	
+			</div>
+		</modal>
+
 		<ul class="steps-list">
 			<li ng-click="vc.openSimpleModal()" class="steps-list__item">
 				<img src="https://image.freepik.com/free-icon/modal-list_318-121594.jpg" alt="">
