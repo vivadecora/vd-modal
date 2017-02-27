@@ -9,5 +9,11 @@
 		vc.openSimpleModal = function(){
 			vc.simpleModal.isOpen = true;
 		}
+
+		vc.helloWorlModal = new ModalModel.getConstructor("hello-world");
+		vc.openHelloWorlModal = function(){
+			vc.helloWorlModal.isOpen = true;
+		}
+
 	}
 })();

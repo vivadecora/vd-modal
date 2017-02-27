@@ -34,6 +34,11 @@
 			<p>Click anywhere outside to close it.</p>
 		</modal>
 
+		<modal model="vc.helloWorlModal">
+			<h1>Hello world!</h1>
+			<p> This is my first modal using VD modal </p>
+		</modal>		
+
 		<ul class="steps-list">
 			<li ng-click="vc.openSimpleModal()" class="steps-list__item">
 				<img src="https://image.freepik.com/free-icon/modal-list_318-121594.jpg" alt="">
@@ -109,7 +114,7 @@
 &lt;/body&gt;
 				</code>
 			</pre>
-			Voilá! <a href ng-click="">You will have a modal just like this.</a>
+			Voilá! <a href ng-click="vc.openHelloWorlModal()">You will have a modal just like this.</a>
 		</div>										
 	</section>
 	<script async defer src="https://buttons.github.io/buttons.js"></script>	
