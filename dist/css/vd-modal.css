@@ -36,7 +36,7 @@
     margin-bottom: 20px;
     text-shadow: 1px 1px #8cc4ea; }
 
-.steps-list, .steps-list--item {
+.steps-list {
   display: flex;
   justify-content: space-between;
   margin: 0;
@@ -44,5 +44,5 @@
   padding: 0;
   text-align: center;
   list-style: none; }
-  .steps-list--item {
+  .steps-list__item {
     cursor: pointer; }
