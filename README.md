@@ -16,8 +16,6 @@ This is another modal component using angularJs framework. This modal wants to b
 * [Installation](#installation)
 * [Basic Usage](#basic-usage)
 * [Column modal](#column-modal)
-* [General api options](#api-options)
-* [Most important css classes](#css)
 * [License](#license)
 
 <h2 id="installation"> Installation </h2>
@@ -81,9 +79,47 @@ After you do id, create your own `<modal>` in html wrapping any content you need
 </body>	
 ```
 
-<h2 id="basic-usage"> Column modal </h2>
-<h2 id="api-options"> General Api Options </h2>
-<h2 id="css"> Most important css classes </h2>
+<h2 id="column-modal"> Column modal </h2>
+
+Column modal is another directive you are able to use to create a two columns modal. Modals with columns have basically
+
+* A column for main content;
+* A column for sidebar content;
+* A toggle button inside content column to expand/collapse sidebar;
+
+### Create your instance of ModalModel as usually:
+
+```javascript
+
+angular.module("my-application").controller("MainController", MainController);
+
+function MainController(ModalModel){
+
+    var vc = this;
+    vc.sidebarModel = new ModalModel.getConstructor("sidebar-model");
+    vc.sidebarModel.isFullscreen = true;
+
+    vc.openSidebarModel = function(){
+        vc.sidebarModel.isOpen = true;
+    }
+}
+
+``` 
+and in your HTML you should do:
+
+```html
+
+<modal model="vc.sidebarModel">
+    <div class="vd-modal__grid">
+        <modal-column layout="content" modal-instance="sidebar-model">Content of my modal</modal-column>
+        <modal-column layout="sidebar" modal-instance="sidebar-model">Sidebar of my modal</modal-column>
+    </div>
+<modal>
+
+<button ng-click="vc.openSidebarModal()">Open sidebar modal</button>
+
+``` 
+
 <h2 id="license">License</h2>
 
 VD modal is licensed under MIT. [https://github.com/vivadecora/vd-modal/blob/master/LICENSE](see more).
