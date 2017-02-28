@@ -19,8 +19,69 @@ This is another modal component using angularJs framework. This modal wants to b
 * [License](#license)
 
 <h2 id="installation"> Installation </h2>
+
+### 1. Install VD modal as a npm package:
+
+```shell
+$ npm install --save vd-modal
+``` 
+
+Or use it from unpackage cdn, from this url:
+
+> https://unpkg.com/vd-modal@0.0.1/dist/js/vd-modal.min.js
+
+### 2. Insert javascript and css from vd-modal.
+
+```html
+<script src="/path/to/vd-modal/dist/js/vd-modal.min.js" type="application/javascript"></script>
+<link rel="stylesheet" href="/path/to/vd-modal/dist/css/vd-modal.css">
+``` 
+
+### 3. Inject vd-modal module to your application.
+
+```javascript
+"use strict"
+
+(function(){
+	angular.module("my-application", ["vd-modal"]);
+})();
+``` 
+
 <h2 id="basic-usage"> Basic Usage </h2>
+
+Create your modal by using `ModalModel` factory. `ModalModal` provides a function called `getContructor(nameOfYourModal)` that you can use to create new instances of your modals, like that:
+
+```javascript
+"use strict"
+
+(function(){
+	angular.module("my-application").controller("mainController", function(ModalModel){
+		var vc = this;
+		vc.helloWorlModal = new ModalModel.getConstructor("hello-world");
+		vc.openHelloWorlModal = function(){
+			vc.helloWorlModal.isOpen = true;
+		}
+	});
+})();	
+```
+
+After you do id, create your own `<modal>` in html wrapping any content you need:
+
+```html
+<body ng-app="my-application">
+	<modal model="vc.helloWorlModal">
+		<h1>Hello world!</h1>
+		<p> This is my first modal using VD modal </p>
+	</modal>
+	<main ng-controller="mainController">
+		<button ng-click="vc.openHelloWorlModal()"></button>
+	</main>
+</body>	
+```
+
 <h2 id="basic-usage"> Column modal </h2>
 <h2 id="api-options"> General Api Options </h2>
 <h2 id="css"> Most important css classes </h2>
 <h2 id="license">License</h2>
+
+VD modal is licensed under MIT. [https://github.com/vivadecora/vd-modal/blob/master/LICENSE](see more).
