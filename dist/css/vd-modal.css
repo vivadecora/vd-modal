@@ -1,16 +1,51 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
-.section {
+.section, .section--column {
   max-width: 960px;
   margin: 0 auto;
   display: flex;
   padding: 20px 0;
   flex-direction: row; }
+  .section__title {
+    width: 100%; }
   @media (min-width: 768px) {
-    .section {
+    .section, .section--column {
       flex-direction: column; } }
+  .section--column {
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 100%; }
+    @media (min-width: 768px) {
+      .section--column {
+        max-width: 960px;
+        flex-direction: row; } }
 
 .body {
   font-family: Montserrat, "sans-serif"; }
+
+.page-footer {
+  background: #43484c;
+  color: #fff;
+  font-size: 15px;
+  border-top: 10px solid #373b3e; }
+  .page-footer__content {
+    display: flex;
+    max-width: 980px;
+    margin: 0 auto;
+    flex-direction: column; }
+    @media (min-width: 768px) {
+      .page-footer__content {
+        flex-direction: row; } }
+  .page-footer__section {
+    max-width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; }
+    @media (min-width: 768px) {
+      .page-footer__section {
+        max-width: 60%; } }
+    .page-footer__section a {
+      color: inherit;
+      margin-top: 15px; }
 
 .hero {
   background-color: #3598dB;

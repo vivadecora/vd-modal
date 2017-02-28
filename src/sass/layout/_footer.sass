@@ -1,0 +1,27 @@
+.page-footer
+	background: #43484c
+	color: #fff
+	font-size: 15px
+	border-top: 10px solid hsl(207, 6%, 23%)
+
+	+element("content")
+		display: flex
+		max-width: 980px
+		margin: 0 auto
+		flex-direction: column
+		
+		@media (min-width: 768px)
+			flex-direction: row
+
+	
+	+element("section")
+		max-width: 100%		
+		padding: 20px
+		display: flex
+		flex-direction: column
+		@media (min-width: 768px)
+			max-width: 60%
+		
+		a
+			color: inherit
+			margin-top: 15px
