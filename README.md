@@ -2,6 +2,8 @@
 
 > VD Modal is a easy to use modal for angularjs application. one modal at a time.
 
+![vd modal easy to use angularjs modal one modal at a time](https://cloud.githubusercontent.com/assets/762639/23389341/379f1c18-fd46-11e6-9ae3-5e63d56d861a.png)
+
 This is another modal component using angularJs framework. This modal wants to be simple and easy to use.
 
 * VD Modal opens one modal at a time, never shows two modals at same time.
