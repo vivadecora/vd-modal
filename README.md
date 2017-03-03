@@ -40,9 +40,10 @@ Or use it from unpackage cdn, from this url:
 ### 3. Inject vd-modal module to your application.
 
 ```javascript
-"use strict"
 
 (function(){
+        "use strict"
+	
 	angular.module("my-application", ["vd-modal"]);
 })();
 ``` 
@@ -52,9 +53,10 @@ Or use it from unpackage cdn, from this url:
 Create your modal by using `ModalModel` factory. `ModalModal` provides a function called `getContructor(nameOfYourModal)` that you can use to create new instances of your modals, like that:
 
 ```javascript
-"use strict"
 
 (function(){
+       "use strict"
+       
 	angular.module("my-application").controller("mainController", function(ModalModel){
 		var vc = this;
 		vc.helloWorlModal = new ModalModel.getConstructor("hello-world");
