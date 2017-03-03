@@ -42,7 +42,7 @@ Or use it from unpackage cdn, from this url:
 ```javascript
 
 (function(){
-        "use strict"
+    "use strict"
 	
 	angular.module("my-application", ["vd-modal"]);
 })();
@@ -55,7 +55,7 @@ Create your modal by using `ModalModel` factory. `ModalModal` provides a functio
 ```javascript
 
 (function(){
-       "use strict"
+   "use strict"
        
 	angular.module("my-application").controller("mainController", function(ModalModel){
 		var vc = this;
