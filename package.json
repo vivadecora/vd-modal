@@ -1,6 +1,6 @@
 {
   "name": "vd-modal",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "vd-modal is a easy to use modal for angularjs application. one modal at a time.",
   "main": "index.js",
   "scripts": {
