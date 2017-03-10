@@ -84,7 +84,7 @@
         margin-right: 10px; }
       .vd-modal__grid__column--sidebar {
         opacity: 1;
-        min-width: 285px;
+        width: 285px;
         margin-right: 0;
         transition: margin-right .75s, opacity .75s; }
       .vd-modal__grid__column--sidebar-collapsed {
